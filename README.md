@@ -1,6 +1,11 @@
 # Saqlain Mahmood - Portfolio
 
+[![Live](https://img.shields.io/badge/Live-saqlainmahmood.me-4d8dff?logo=vercel&logoColor=white)](https://saqlainmahmood.me)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 A single-page developer portfolio built with React, Vite, Tailwind CSS v4, and Framer Motion. Dark glassmorphism theme.
+
+**Live:** [saqlainmahmood.me](https://saqlainmahmood.me)
 
 ## Tech
 
