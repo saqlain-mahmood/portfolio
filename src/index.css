@@ -1,0 +1,133 @@
+/* Tailwind v4 - single import pulls in the whole framework */
+@import "tailwindcss";
+
+@theme {
+  /* Modern grotesk for headings, clean Inter for body */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+
+  /* ---- DARK theme (default) ---- */
+  --color-bg: #0a0a0c;
+
+  --color-accent: #4d8dff;
+  --color-accent-hover: #6aa0ff;
+  --color-accent-soft: rgba(77, 141, 255, 0.14);
+
+  --color-ink-900: #fafafa; /* headings */
+  --color-ink-700: #d4d4d8; /* body */
+  --color-ink-500: #8b8b94; /* muted */
+  --color-ink-300: #3f3f46;
+  --color-ink-100: #18181b;
+
+  /* tokenized surfaces so the glass UI can flip themes cleanly */
+  --color-line: rgba(255, 255, 255, 0.1); /* borders / dividers  -> border-line */
+  --color-fill: rgba(255, 255, 255, 0.05); /* subtle fills        -> bg-fill */
+  --color-fill-strong: rgba(255, 255, 255, 0.09); /* hover fills   -> bg-fill-strong */
+
+  --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Non-utility vars used by the .glass helper + the Background layer (dark). */
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.09);
+  --glass-highlight: rgba(255, 255, 255, 0.09);
+  --grid-line: rgba(255, 255, 255, 0.07);
+  --bg-sheen: rgba(255, 255, 255, 0.05);
+}
+
+/* ---- LIGHT theme (when <html class="light">) ---- */
+:root.light {
+  --color-bg: #f5f6fa;
+
+  --color-accent: #2f6fd0;
+  --color-accent-hover: #2a62b8;
+  --color-accent-soft: rgba(47, 111, 208, 0.12);
+
+  --color-ink-900: #0f1115;
+  --color-ink-700: #2f333b;
+  --color-ink-500: #646b76;
+  --color-ink-300: #c4c9d2;
+  --color-ink-100: #e9ebf1;
+
+  --color-line: rgba(15, 17, 21, 0.1);
+  --color-fill: rgba(15, 17, 21, 0.04);
+  --color-fill-strong: rgba(15, 17, 21, 0.07);
+
+  --shadow-soft: 0 10px 40px rgba(15, 17, 21, 0.1);
+
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(15, 17, 21, 0.08);
+  --glass-highlight: rgba(255, 255, 255, 0.8);
+  --grid-line: rgba(15, 17, 21, 0.05);
+  --bg-sheen: rgba(255, 255, 255, 0);
+}
+
+/* Reusable frosted-glass panel (theme-aware via the vars above) */
+@layer components {
+  .glass {
+    background-color: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    -webkit-backdrop-filter: blur(22px) saturate(140%);
+    backdrop-filter: blur(22px) saturate(140%);
+    box-shadow: inset 0 1px 0 var(--glass-highlight);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-bg);
+}
+
+/* smooth the theme switch */
+html,
+.glass,
+body {
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+section[id] {
+  scroll-margin-top: 90px;
+}
+
+/* Clean keyboard-focus ring (only shows for keyboard users) */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+body {
+  margin: 0;
+  background: transparent;
+  color: var(--color-ink-700);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Infinite marquee for the tech ribbon */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+}
+.marquee-hover:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee {
+    animation: none;
+  }
+}
