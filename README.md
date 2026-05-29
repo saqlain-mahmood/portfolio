@@ -1,4 +1,4 @@
-# Saqlain Mahmood - Portfolio : 
+# Saqlain Mahmood - Portfolio
 
 [![Live](https://img.shields.io/badge/Live-saqlainmahmood.me-4d8dff?logo=vercel&logoColor=white)](https://saqlainmahmood.me)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
