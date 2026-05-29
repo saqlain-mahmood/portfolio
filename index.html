@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0a0c" />
+    <!-- set base bg early to avoid a flash before CSS loads -->
+    <style>
+      html { background: #0a0a0c; }
+    </style>
+    <!-- apply the saved theme before paint (default: dark) -->
+    <script>
+      try {
+        if (localStorage.theme === "light") {
+          document.documentElement.classList.add("light");
+          document.documentElement.style.background = "#f5f6fa";
+        }
+      } catch (e) {}
+    </script>
+
+    <!-- SEO / social preview -->
+    <meta
+      name="description"
+      content="Saqlain Mahmood, full-stack developer (MERN + Next.js) and aspiring Associate Software Engineer."
+    />
+    <meta name="author" content="Saqlain Mahmood" />
+
+    <!-- Open Graph (LinkedIn, Facebook, WhatsApp previews) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Saqlain Mahmood · Full-Stack Developer" />
+    <meta
+      property="og:description"
+      content="Full-stack developer (MERN + Next.js) and aspiring Associate Software Engineer."
+    />
+    <!-- After deploying, add your live URL + a preview image here:
+    <meta property="og:url" content="https://your-domain.com" />
+    <meta property="og:image" content="https://your-domain.com/og.png" /> -->
+
+    <!-- Twitter / X card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Saqlain Mahmood · Full-Stack Developer" />
+    <meta
+      name="twitter:description"
+      content="Full-stack developer (MERN + Next.js) and aspiring Associate Software Engineer."
+    />
+
+    <!-- Google Fonts: Fraunces (elegant serif headings) + Inter (clean body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Saqlain Mahmood · Full-Stack Developer</title>
+
+    <!-- Structured data: helps Google/LinkedIn understand who this is -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Saqlain Mahmood",
+        "jobTitle": "Full-Stack Developer",
+        "email": "mailto:saqlainxmahmood@gmail.com",
+        "address": { "@type": "PostalAddress", "addressCountry": "Pakistan" },
+        "knowsAbout": ["React", "Next.js", "Node.js", "MongoDB", "Python", "AI Integration"],
+        "sameAs": [
+          "https://github.com/saqlain-mahmood",
+          "https://linkedin.com/in/saqlainmahmood",
+          "https://x.com/saqlainmahmood_"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
