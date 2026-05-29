@@ -1,4 +1,4 @@
-# Saqlain Mahmood - Portfolio
+# Saqlain Mahmood - Portfolio : 
 
 [![Live](https://img.shields.io/badge/Live-saqlainmahmood.me-4d8dff?logo=vercel&logoColor=white)](https://saqlainmahmood.me)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -7,7 +7,7 @@ A single-page developer portfolio built with React, Vite, Tailwind CSS v4, and F
 
 **Live:** [saqlainmahmood.me](https://saqlainmahmood.me)
 
-## Tech
+## Tech 
 
 - **React 19** + **Vite**
 - **Tailwind CSS v4** (`@tailwindcss/vite` - config lives in `src/index.css`)
