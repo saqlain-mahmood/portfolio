@@ -28,7 +28,7 @@ const links = [
 export default function Hero() {
   return (
     <section id="home" className="relative flex min-h-screen items-center px-6 py-28">
-      <div className="mx-auto w-full max-w-3xl">
+      <div className="mx-auto w-full min-w-0 max-w-3xl">
         {/* Profile card */}
         <motion.div
           initial={{ opacity: 0, y: 26, scale: 0.98 }}
@@ -119,13 +119,13 @@ export default function Hero() {
               href={href}
               target={href.startsWith("http") ? "_blank" : undefined}
               rel="noreferrer"
-              className="group glass flex items-center justify-between gap-3 rounded-2xl px-5 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:bg-fill-strong"
+              className="group glass flex min-w-0 items-center justify-between gap-3 rounded-2xl px-5 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:bg-fill-strong"
             >
-              <span className="flex items-center gap-3">
-                <Icon className="h-5 w-5 text-ink-900" />
-                <span className="text-sm font-medium text-ink-900">{label}</span>
+              <span className="flex min-w-0 items-center gap-3">
+                <Icon className="h-5 w-5 flex-shrink-0 text-ink-900" />
+                <span className="truncate text-sm font-medium text-ink-900">{label}</span>
               </span>
-              <ArrowIcon className="h-4 w-4 -rotate-45 text-ink-500 transition-all group-hover:rotate-0 group-hover:text-accent" />
+              <ArrowIcon className="h-4 w-4 flex-shrink-0 -rotate-45 text-ink-500 transition-all group-hover:rotate-0 group-hover:text-accent" />
             </a>
           ))}
         </motion.div>
