@@ -79,14 +79,15 @@ export default function Hero() {
           </motion.div>
 
           <motion.p {...fade(0.28)} className="mt-6 text-xl leading-snug text-ink-700 sm:text-2xl">
-            Full-stack developer building scalable apps with{" "}
-            <span className="text-accent">MERN</span> &amp;{" "}
+            I build web &amp; mobile apps with{" "}
+            <span className="text-accent">MERN</span> and{" "}
             <span className="text-accent">Next.js</span>.
           </motion.p>
 
           <motion.p {...fade(0.34)} className="mt-4 max-w-xl text-base leading-relaxed text-ink-500">
-            Computer Science graduate &amp; aspiring Associate Software Engineer,
-            focused on clean code, REST APIs, and practical AI integration.
+            Full-stack developer and Computer Science graduate. Aspiring
+            Associate Software Engineer, focused on clean code, REST APIs, and
+            practical AI integration.
           </motion.p>
 
           <motion.div {...fade(0.42)} className="mt-9 flex flex-wrap items-center gap-3">
